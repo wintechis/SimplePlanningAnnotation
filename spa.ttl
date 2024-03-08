@@ -219,3 +219,9 @@
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-divide> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
+
+td:InteractionAffordance a rdfs:Class ;
+    rdfs:seeAlso <https://www.w3.org/2019/wot/td#InteractionAffordance> .
+
+td:PropertyAffordance a rdfs:Class ;
+    rdfs:seeAlso <https://www.w3.org/2019/wot/td#PropertyAffordance> .
