@@ -9,7 +9,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix : <https://paul.ti.rw.fau.de/~jo00defe/spa#> .
 
-<https://www.w3.org/2019/wot/td> a owl:Ontology ;
+<https://paul.ti.rw.fau.de/~jo00defe/spa> a owl:Ontology ;
     vann:preferredNamespacePrefix "spa" ;
     vann:preferredNamespaceUri "https://paul.ti.rw.fau.de/~jo00defe/spa#" ;
     owl:versionInfo "0.0.1" ;
