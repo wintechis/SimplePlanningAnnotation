@@ -15,6 +15,7 @@
     owl:versionInfo "0.0.1" ;
     rdfs:comment "Ontology to model preconditions and effects of interaction affordances in a W3C Web of Things Thing Description."@en ;
     dcterms:title "Simple Planning Annotation"@en ;
+    dcterms:created "2024-03-07";
     dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0>  ;
     dcterms:contributor <https://freumi.inrupt.net/profile/card#> , 
                         <https://danielhenselmann.solidcommunity.net/profile/card#me>,
@@ -121,7 +122,7 @@
 	rdfs:range :BooleanExpression ;
 	rdfs:domain :BooleanExpression .
 
-:logicalNotOperator a rdf:Property ;
+:logicalNotParameter a rdf:Property ;
     rdfs:label "logicalNotParameter" ;
     rdfs:comment "Parameter of a logical NOT expression."@en ;
     rdfs:seeAlso <https://www.openmath.org/cd/logic1#not> ;
@@ -129,7 +130,7 @@
 	rdfs:range :BooleanExpression ;
 	rdfs:domain :BooleanExpression .
 
-:booleanEqualOperator a rdf:Property ;
+:booleanEqualParameter a rdf:Property ;
     rdfs:label "booleanEqualParameter" ;
     rdfs:comment "Parameter of a boolean equal expression."@en ;
     rdfs:seeAlso <https://www.openmath.org/cd/logic1#not> ;
@@ -237,3 +238,6 @@ td:InteractionAffordance a rdfs:Class ;
 
 td:PropertyAffordance a rdfs:Class ;
     rdfs:seeAlso <https://www.w3.org/2019/wot/td#PropertyAffordance> .
+
+td:Thing a rdfs:Class ;
+    rdfs:seeAlso <https://www.w3.org/2019/wot/td#Thing> .
