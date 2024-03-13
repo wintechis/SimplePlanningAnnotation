@@ -7,11 +7,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix : <https://paul.ti.rw.fau.de/~jo00defe/spa#> .
+@prefix : <https://paul.ti.rw.fau.de/~jo00defe/voc/spa#> .
 
-<https://paul.ti.rw.fau.de/~jo00defe/spa> a owl:Ontology ;
+<https://paul.ti.rw.fau.de/~jo00defe/voc/spa> a owl:Ontology ;
     vann:preferredNamespacePrefix "spa" ;
-    vann:preferredNamespaceUri "https://paul.ti.rw.fau.de/~jo00defe/spa#" ;
+    vann:preferredNamespaceUri "https://paul.ti.rw.fau.de/~jo00defe/voc/spa#" ;
     owl:versionInfo "0.0.1" ;
     rdfs:comment "Ontology to model preconditions and effects of interaction affordances in a W3C Web of Things Thing Description."@en ;
     dcterms:title "Simple Planning Annotation"@en ;
@@ -24,66 +24,71 @@
 :Effect a rdfs:Class ;
     rdfs:label "Effect" ;
     rdfs:comment "Effect that the execution of an action has on a property affordance."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :Expression a rdfs:Class ;
     rdfs:label "Expression" ;
     rdfs:comment "An expression able to be evaluated."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :BooleanExpression a rdfs:Class ;
 	rdfs:subClassOf :Expression ;
     rdfs:label "BooleanExpression" ;
     rdfs:comment "An expression of type boolean able to be evaluated."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :NumericalExpression a rdfs:Class ;
 	rdfs:subClassOf :Expression ;
     rdfs:label "NumericalExpression" ;
     rdfs:comment "An expression of type number able to be evaluated."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :NumericalExpressionParameter a rdfs:Class ;
 	owl:unionOf (:NumericalExpression xsd:float xsd:integer) ;
     rdfs:label "NumericalExpressionParameter" ;
     rdfs:comment "Possible parameter of numerical expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :BooleanPropertyAffordance a rdfs:Class;
 	rdfs:subClassOf td:PropertyAffordance , :BooleanExpression ;
     rdfs:label "BooleanPropertyAffordance" ;
     rdfs:comment "Property affordance of type boolean."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :NumberPropertyAffordance a rdfs:Class;
 	rdfs:subClassOf td:PropertyAffordance , :NumericalExpression ;
     rdfs:label "NumberPropertyAffordance" ;
     rdfs:comment "Property affordance of type number."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
+
+:HiddenProperty a rdfs:Class ;
+    rdfs:label "HiddenProperty" ;
+    rdfs:comment "Not exposed via read or write but able to be manipulated."@en ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :false a owl:NamedIndividual , :BooleanExpression ;
     rdfs:label "false" ;
     rdfs:comment "Named individual representing a boolean false."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-false> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :true a owl:NamedIndividual , :BooleanExpression ;
     rdfs:label "true" ;
     rdfs:comment "Named individual representing a boolean true."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-true> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> .
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
 :hasEffect a rdf:Property ;
     rdfs:label "hasEffect" ;
     rdfs:comment "All effects of an action or property affordance."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:domain td:InteractionAffordance ;
 	rdfs:range :Effect .
 
 :hasTarget a rdf:Property;
     rdfs:label "hasTarget" ;
     rdfs:comment "Target property affordance of an effect."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:domain :Effect ;
 	rdfs:range  td:PropertyAffordance .
 
@@ -96,7 +101,7 @@
 :hasPrecondition a rdf:Property ;
     rdfs:label "hasPrecondition" ;
     rdfs:comment "All preconditions of an action or property affordance."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:domain td:InteractionAffordance ;
     rdfs:range :BooleanExpression .
 
@@ -104,7 +109,7 @@
     rdfs:label "logicalAndParameter" ;
     rdfs:comment "Parameter of a logical AND expression."@en ;
     rdfs:seeAlso <http://www.openmath.org/cd/logic1#and> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :BooleanExpression ;
 	rdfs:domain :BooleanExpression .
 
@@ -112,7 +117,7 @@
     rdfs:label "logicalOrParameter" ;
     rdfs:comment "Parameter of a logical OR expression."@en ;
     rdfs:seeAlso <http://www.openmath.org/cd/logic1#and> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :BooleanExpression ;
 	rdfs:domain :BooleanExpression .
 
@@ -120,7 +125,7 @@
     rdfs:label "logicalNotParameter" ;
     rdfs:comment "Parameter of a logical NOT expression."@en ;
     rdfs:seeAlso <https://www.openmath.org/cd/logic1#not> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :BooleanExpression ;
 	rdfs:domain :BooleanExpression .
 
@@ -128,7 +133,7 @@
     rdfs:label "booleanEqualParameter" ;
     rdfs:comment "Parameter of a boolean equal expression."@en ;
     rdfs:seeAlso <https://www.openmath.org/cd/logic1#not> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :BooleanExpression ;
 	rdfs:domain :BooleanExpression .
 
@@ -136,7 +141,7 @@
     rdfs:label "leftGreaterThanParameter" ;
     rdfs:comment "Left parameter of a greater than expression."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-greater-than> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :NumericalExpression;
 	rdfs:domain :BooleanExpression .
 
@@ -144,7 +149,7 @@
     rdfs:label "rightGreaterThanParameter" ;
     rdfs:comment "Right parameter of a greater than expression."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-greater-than> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :NumericalExpression;
 	rdfs:domain :BooleanExpression .
 
@@ -152,7 +157,7 @@
     rdfs:label "leftLessThanParameter" ;
     rdfs:comment "Left parameter of a less than expression."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-less-than> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :NumericalExpression;
 	rdfs:domain :BooleanExpression .
 
@@ -160,7 +165,7 @@
     rdfs:label "rightLessThanParameter" ;
     rdfs:comment "Right parameter of a less than expression."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-less-than> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :NumericalExpression;
 	rdfs:domain :BooleanExpression .
 
@@ -168,14 +173,14 @@
     rdfs:label "numericEqualParameter" ;
     rdfs:comment "Parameter of a numeric equal expression."@en ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-equal> ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
 	rdfs:range :NumericalExpression ;
 	rdfs:domain :BooleanExpression .
 
 :numericAddParameter a rdf:Property;
     rdfs:label "numericAddParameter" ;
     rdfs:comment "Parameter of a numeric add expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-add> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
@@ -183,7 +188,7 @@
 :leftNumericSubtractParameter a rdf:Property;
     rdfs:label "leftNumericSubtractParameter" ;
     rdfs:comment "Left parameter of a numeric subtract expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-subtract> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
@@ -191,7 +196,7 @@
 :rightNumericSubtractParameter a rdf:Property;
     rdfs:label "rightNumericSubtractParameter" ;
     rdfs:comment "Right parameter of a numeric subtract expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-subtract> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
@@ -199,7 +204,7 @@
 :numericMultiplyParameter a rdf:Property;
     rdfs:label "numericMultiplyParameter" ;
     rdfs:comment "Parameter of a numeric multiply expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-multiply> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
@@ -207,7 +212,7 @@
 :leftNumericDivideParameter a rdf:Property;
     rdfs:label "leftNumericDivideParameter" ;
     rdfs:comment "Left parameter of a numeric divide expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-divide> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
@@ -215,10 +220,17 @@
 :rightNumericDivideParameter a rdf:Property;
     rdfs:label "rightNumericDivideParameter" ;
     rdfs:comment "Right parameter of a numeric divide expression."@en ;
-    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/spa> ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-numeric-divide> ;
 	rdfs:domain :NumericalExpression;
 	rdfs:range :NumericalExpressionParameter.
+
+:hasHiddenProperty a rdf:Property ;
+    rdfs:label "hasHiddenProperty" ;
+    rdfs:comment "All hidden properties of a Thing, that are not exposed via WoT read or write properties."@en ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> ;
+    rdfs:domain td:Thing ;
+    rdfs:range :HiddenProperty .
 
 td:InteractionAffordance a rdfs:Class ;
     rdfs:seeAlso <https://www.w3.org/2019/wot/td#InteractionAffordance> .
