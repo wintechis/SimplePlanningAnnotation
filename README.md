@@ -8,3 +8,6 @@ The additional annotations allow the modeling of order of interaktios in Thing D
 ### Thing Description to Planning Problem
 The annotations allow a mapping between Thing Descriptions and the Planning Domain Definition Language, enabling the use of standard AI planning algorithms to solve the created planning problem and automatically create a Web of Things program. 
 A prototypical implementation that translates Thing Descriptions into planning problems can be found [here](https://github.com/FreuMi/TD2P).
+
+### License
+All content in this repository is licensed under the [Creative Commons - Attribution 4.0 International (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/).
