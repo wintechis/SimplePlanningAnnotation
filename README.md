@@ -1,4 +1,4 @@
-# Ontologie for Simple Planning Annotation
+# Ontology for Simple Planning Annotation
 The ontology can be found  [here](https://paul.ti.rw.fau.de/~jo00defe/voc/spa). The server uses content negotiation and serves both the turtle file and a human-readable HTML file.
 
 ### Purpose and scope of the ontology
