@@ -79,6 +79,11 @@
     rdfs:seeAlso <https://www.w3.org/TR/xpath-functions-31/#func-true> ;
     rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
 
+:inputValue a owl:NamedIndividual , :BooleanExpression , :NumericalExpression ;
+    rdfs:label "inputValue" ;
+    rdfs:comment "Named individual representing a custom input value."@en ;
+    rdfs:isDefinedBy <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> .
+
 :hasEffect a rdf:Property ;
     rdfs:label "hasEffect" ;
     rdfs:comment "All effects of an action or property affordance."@en ;
