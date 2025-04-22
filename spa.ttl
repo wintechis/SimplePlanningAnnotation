@@ -12,10 +12,10 @@
 <https://paul.ti.rw.fau.de/~jo00defe/voc/spa> a owl:Ontology ;
     vann:preferredNamespacePrefix "spa" ;
     vann:preferredNamespaceUri "https://paul.ti.rw.fau.de/~jo00defe/voc/spa#" ;
-    owl:versionInfo "0.0.1" ;
+    owl:versionInfo "0.0.2" ;
     rdfs:comment "Ontology to model preconditions and effects of interaction affordances in a W3C Web of Things Thing Description."@en ;
     dcterms:title "Simple Planning Annotation"@en ;
-    dcterms:created "2024-03-07";
+    dcterms:created "2025-04-22";
     dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0>  ;
     dcterms:contributor <https://freumi.inrupt.net/profile/card#> , 
                         <https://danielhenselmann.solidcommunity.net/profile/card#me>,
